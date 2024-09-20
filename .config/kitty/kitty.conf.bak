@@ -1,0 +1,18 @@
+# vim:ft=kitty
+
+## name:     Catppuccin Kitty Mocha
+## author:   Catppuccin Org
+## license:  MIT
+## upstream: https://github.com/catppuccin/kitty/blob/main/themes/mocha.conf
+## blurb:    Soothing pastel theme for the high-spirited!
+
+font_family VictorMono Nerd Font
+font_size 16.0
+disable_ligatures never
+
+background_opacity 1.0
+include catppuccin.conf
+linux_display_backend to x11
+
+map cmd+plus change_font_size all +2.0
+map cmd+minus change_font_size all -2.0
