@@ -51,6 +51,11 @@ local function note_function()
 end
 vim.keymap.set("n", "<leader>on", note_function)
 
+-- Keymap to move obsidian notes into a new directory if accepted in review
+vim.keymap.set("n", "<leader>ok", ":!mv '%:p' ~/Documents/obsidian/obsidian-vault/Personal/Sorted<cr>:bd<cr>")
+-- Keymap to delete notes if they are not accepted during review
+vim.keymap.set("n", "<leader>odd", ":!rm '%:p'<cr>:bd<cr>")
+
 -- Remove the mouse and arrow keys
 vim.cmd("set mouse=")
 

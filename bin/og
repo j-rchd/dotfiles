@@ -2,7 +2,7 @@
 
 ### Custom command that allows me to loop through my obsidian files and sort them into the correct directory ###
 VAULT_DIR="$HOME/Documents/obsidian/obsidian-vault/Personal"
-SOURCE_DIR="Unsorted"
+SOURCE_DIR="Sorted"
 DEST_DIR="Notes"
 
 
@@ -30,4 +30,4 @@ find "$VAULT_DIR/$SOURCE_DIR" -type f -name "*.md" | while read -r file; do
 
 done
 
-echo "Done 🪷"
+echo "Done"
