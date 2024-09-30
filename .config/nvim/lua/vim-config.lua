@@ -25,9 +25,31 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 
 -- yank to clipboard
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 -- yank line to clipboard
 vim.keymap.set("n", "<leader>Y", [["+Y]])
+
+-- Set conceallevel for Markdown files
+vim.opt_local.conceallevel = 1
+
+-- Command to use and format the note template when creating a new note in obsidian
+-- Formats by removing the date from the title and replacing hyphens with spaces
+local function note_function()
+	vim.cmd("ObsidianTemplate note")
+	vim.schedule(function()
+		vim.cmd("normal! G")
+		vim.cmd("normal! dd")
+
+        local line = vim.fn.getline(".")
+        local new_line = vim.fn.substitute(line, [[\(# \)[^_]*_]], [[\1]], "")
+        new_line = vim.fn.substitute(new_line, "-", " ", "g")
+        vim.fn.setline(".", new_line)
+
+		-- vim.cmd([[silent! s/\(# \)[^_]*_/\\1/]])
+		-- vim.cmd([[try | silent! s/-/ /g | catch | endtry]])
+	end)
+end
+vim.keymap.set("n", "<leader>on", note_function)
 
 -- Remove the mouse and arrow keys
 vim.cmd("set mouse=")
@@ -36,4 +58,3 @@ vim.cmd("noremap <Up> <Nop>")
 vim.cmd("noremap <Down> <Nop>")
 vim.cmd("noremap <Left> <Nop>")
 vim.cmd("noremap <Right> <Nop>")
-

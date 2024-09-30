@@ -1,0 +1,21 @@
+#!/usr/bin/zsh
+
+# Simple command (on) which creates a new note in my obsidian folder. Arguments:
+# 	- Note title (string)
+
+# Make sure a new note is created with a title!
+if [ "$#" -ne 1 ]; then
+	echo "ERROR: New notes must be created with a title!"
+	exit 1
+fi
+
+# Path to dir where new notes are stored
+dir=~/Documents/obsidian/obsidian-vault/Personal
+cd $dir || exit
+
+current_date=$(date '+%Y-%m-%d')
+# Create new markdown file
+note=$dir/Unsorted/${current_date}_$1.md
+echo "Creating note at: $note"
+touch $note || exit
+nvim  $note || exit

@@ -81,6 +81,9 @@ eval "$(zoxide init --cmd cd zsh)"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Add custom binaries to path
+export PATH="$HOME/bin:$PATH"
+
 # Not sure why, but tab doesn't set to fzf-tab-complete so have to do it manually...
 bindkey -r "^I"
 bindkey "^I" fzf-tab-complete
