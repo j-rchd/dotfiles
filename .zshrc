@@ -73,6 +73,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Aliases
 alias ls='ls --color'
 alias ov='cd ~/Documents/obsidian/obsidian-vault'
+alias or='nvim -p ~/Documents/obsidian/obsidian-vault/Personal/Unsorted/*.md'
 
 # Shell integrations
 source <(fzf --zsh)
