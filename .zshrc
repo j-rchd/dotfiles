@@ -85,6 +85,9 @@ eval "$(zoxide init --cmd cd zsh)"
 # Add custom binaries to path
 export PATH="$HOME/bin:$PATH"
 
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 # Not sure why, but tab doesn't set to fzf-tab-complete so have to do it manually...
 bindkey -r "^I"
 bindkey "^I" fzf-tab-complete
