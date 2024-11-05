@@ -5,9 +5,10 @@ return {
 		local dap = require("dap")
 		local dapui = require("dapui")
 		local pydebug = require("dap-python")
-		local venv_path = os.getenv("VIRTUAL_ENV")
+		local venv_path = os.getenv("PYENV_VERSION")
 		if venv_path then
-			pydebug.setup(venv_path .. "/bin/python")
+			local py_path = os.getenv("HOME") .. "/.pyenv/versions/"
+			pydebug.setup(py_path .. venv_path .. "/bin/python3")
 		else
 			pydebug.setup()
 		end
