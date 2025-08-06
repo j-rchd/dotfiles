@@ -596,7 +596,9 @@ client.connect_signal("request::titlebars", function(c)
 		layout = wibox.layout.align.horizontal,
 	})
 end)
-
+-- Maybe here is a good place to put the gap configuration
+beautiful.useless_gap = 4
+beautiful.gap_single_client = true
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)
 	if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier and awful.client.focus.filter(c) then
