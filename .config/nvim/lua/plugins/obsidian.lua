@@ -23,5 +23,11 @@ return {
 			new_notes_location = "notes_subdir",
 		}
 		require("obsidian").setup(opts)
+		vim.keymap.set("n", "<leader>of", ":s/\\(# \\)[^_]*_/\\1/ | s/-/ /g<cr>")
+		-- move file in current buffer to zettelkasten folder
+		vim.keymap.set("n", "<leader>ok", ":!mv '%:p' /home/joel/Documents/obsidian/obsidian-vault/Personal/Sorted<cr>:bd<cr>")
+		-- delete file in current buffer
+		vim.keymap.set("n", "<leader>odd", ":!rm '%:p'<cr>:bd<cr>")
+
 	end,
 }
