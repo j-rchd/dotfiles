@@ -38,10 +38,9 @@ return {
 	{
 		"nvimtools/none-ls.nvim",
 		config = function()
-			local venv = os.getenv("PYENV_VERSION")
+			local venv = os.getenv("VIRTUAL_ENV")
 			if venv then
-				local venv_path = os.getenv("HOME") .. "/.pyenv/versions/" .. venv
-				PY_PATH = venv_path .. "/bin/python3"
+				PY_PATH = venv .. "/bin/python3"
 			else
 				PY_PATH = os.getenv("HOME") .. "/.pyenv/shims/python3"
 			end
