@@ -616,7 +616,7 @@ end)
 
 -- Autostart apps
 awful.spawn.with_shell("compton")
-awful.spawn.with_shell("nitrogen --restore")
+awful.spawn.with_shell("~/dotfiles/.display-restore.sh")
 awful.spawn.with_shell("~/.config/awesome/natural_scrolling.sh")
 awful.spawn.with_shell("~/.config/awesome/launch_cbatticon.sh")
 awful.util.spawn("nm-applet")
